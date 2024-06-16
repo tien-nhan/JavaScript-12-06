@@ -1,0 +1,395 @@
+/*! Global */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 20px;
+}
+h2 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+h3 {
+    text-decoration: underline red;
+}
+
+
+
+
+/*! Phần Accordion */
+
+div#accordionPlus {
+    width: 84%;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+.accordion-button {
+    cursor: pointer;
+    color: white;
+    background-color: #2196f3de; 
+    border: none;
+    padding: 1rem;
+    font-size: 1.25rem;
+    text-align: left;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.accordion-button:focus,
+.accordion-button[aria-expanded="true"] {
+    background-color: #0069d9; 
+}
+
+
+.accordion-button::after {
+    content: '\002B'; 
+    font-size: 1.5rem;
+    transform: rotate(0deg);
+    transition: transform 0.4s ease;
+}
+
+
+.accordion-button.collapsed::after {
+    content: '\002B';
+    transform: rotate(0deg);
+}
+
+
+.accordion-button[aria-expanded="true"]::after {
+    content: '\2212'; /* Ký tự '-' khi mở */
+    transform: rotate(180deg);
+}
+
+
+.accordion-item {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.accordion-header {
+    margin: 0;
+}
+
+
+.accordion-body {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    background-color: #fff;
+}
+
+
+.accordion-collapse {
+    display: none;
+}
+
+
+.accordion-collapse.show {
+    display: block;
+}
+
+
+
+/*! Phần Corousel */
+.carousel-container {
+    width: 84%;
+    margin: auto;
+    margin-bottom: 1.3rem;
+    overflow: hidden;
+    position: relative;
+    height: 500px; 
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: cover; 
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-prev {
+    left: 22px;
+}
+
+.carousel-next {
+    right: 22px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/*! Phần Navs and Tabs */
+
+.nav-tabs-container {
+    width: 84%;
+    margin: auto;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    background-color: #4CAF50;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-link {
+    width: 53%;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    color: #495057;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #e8ebed;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.nav-link.active {
+    background-color: #fff;
+    color: #495057;
+    font-weight: bold;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: #000;
+    cursor: pointer;
+}
+
+
+.tab-content {
+    border-top: none;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+
+.tab-plus {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+
+.tab-plus.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tab-plus p {
+    margin: 0;
+    padding: 8px;
+    background-color: #4caf504f;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.7;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {    
+        opacity: 1;
+    }
+}
+
+
+
+/*! Phần Modal */
+.modal-container {
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3rem;
+    padding: 22px;
+    text-align: center;
+}
+
+.modal-header button.close-modal {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+    color: #8c8f91;
+}
+.modal-header button.close-modal:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+button.open-modal, button.save-changes-button {
+    cursor: pointer;
+    background-color: #2196f3de;
+    color: white;
+    border: #2196f3de;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 15%;
+    font-size: 1rem;
+}
+button.save-changes-button {
+    width: 26%;
+}
+button.open-modal:hover, button.save-changes-button:hover {
+    background-color: #0069d9;
+    cursor: pointer;
+}
+
+.modal-footer button.close-modal {
+    cursor: pointer;
+    background-color: #82898f;
+    color: white;
+    border: #82898f;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 15%;
+    font-size: 1rem;
+}
+.modal-footer button.close-modal:hover {
+    background-color: #5c636a;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    overflow: auto; 
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    opacity: 1;
+}
+
+.hop-thoai-modal {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 10vh;
+    border-radius: 8px; 
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-50px); 
+    transition: opacity 0.3s ease, transform 0.3s ease, margin-top 0.3s ease;
+}
+
+.modal.active .hop-thoai-modal {
+    opacity: 1;
+    transform: translateY(0); 
+    margin-top: 10vh; 
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    padding-bottom: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
